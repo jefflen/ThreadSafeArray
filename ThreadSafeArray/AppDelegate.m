@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ThreadSafeArray.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,44 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    ThreadSafeArray *arr = [[ThreadSafeArray alloc] init];
+    
+    [arr addObject:@(101)];
+    [arr addObject:@(102)];
+    
+    for (NSInteger i = 0; i < 100; i++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [arr addObject:@(i)];
+        });
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (NSNumber *number in [arr getArray]) {
+            NSLog(@"%@", number);
+        }
+    });
+    
+    [arr addObject:@(103)];
+    [arr addObject:@(104)];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (NSNumber *number in [arr getArray]) {
+            NSLog(@"%@", number);
+        }
+    });
+    
+    [arr addObject:@(105)];
+    
+    for (NSInteger i = 0; i < 50; i++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            for (NSNumber *number in [arr getArray]) {
+                NSLog(@"%@", number);
+            }
+        });
+    }
+    
+    
     return YES;
 }
 

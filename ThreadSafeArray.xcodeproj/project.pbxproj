@@ -13,6 +13,7 @@
 		E4141D6B1DF6F46900BC3291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4141D691DF6F46900BC3291 /* Main.storyboard */; };
 		E4141D6D1DF6F46900BC3291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4141D6C1DF6F46900BC3291 /* Assets.xcassets */; };
 		E4141D701DF6F46900BC3291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4141D6E1DF6F46900BC3291 /* LaunchScreen.storyboard */; };
+		E4141D791DF6F49800BC3291 /* ThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E4141D781DF6F49800BC3291 /* ThreadSafeArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E4141D6C1DF6F46900BC3291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4141D6F1DF6F46900BC3291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4141D711DF6F46900BC3291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4141D771DF6F49800BC3291 /* ThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeArray.h; sourceTree = "<group>"; };
+		E4141D781DF6F49800BC3291 /* ThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				E4141D641DF6F46900BC3291 /* AppDelegate.m */,
 				E4141D661DF6F46900BC3291 /* ViewController.h */,
 				E4141D671DF6F46900BC3291 /* ViewController.m */,
+				E4141D771DF6F49800BC3291 /* ThreadSafeArray.h */,
+				E4141D781DF6F49800BC3291 /* ThreadSafeArray.m */,
 				E4141D691DF6F46900BC3291 /* Main.storyboard */,
 				E4141D6C1DF6F46900BC3291 /* Assets.xcassets */,
 				E4141D6E1DF6F46900BC3291 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			files = (
 				E4141D681DF6F46900BC3291 /* ViewController.m in Sources */,
 				E4141D651DF6F46900BC3291 /* AppDelegate.m in Sources */,
+				E4141D791DF6F49800BC3291 /* ThreadSafeArray.m in Sources */,
 				E4141D621DF6F46900BC3291 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
